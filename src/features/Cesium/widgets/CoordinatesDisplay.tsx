@@ -35,7 +35,7 @@ const CoordinatesDisplay: React.FC = () => {
     if (!coords) return null;
 
     return (
-        <div className="absolute bottom-1 left-20 bg-black/60 text-white px-3 py-1 rounded text-sm backdrop-blur-sm pointer-events-none font-mono z-50">
+        <div className="absolute bottom-10 right-5 bg-black/60 text-white px-3 py-1 rounded text-sm backdrop-blur-sm pointer-events-none font-mono z-50">
             Lat: {coords.lat.toFixed(6)} | Lon: {coords.lon.toFixed(6)}
         </div>
     );

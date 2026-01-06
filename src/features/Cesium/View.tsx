@@ -1,6 +1,6 @@
 import { Cartesian3, createOsmBuildingsAsync, ImageryLayer, OpenStreetMapImageryProvider, SceneMode, Terrain, Viewer, WebMercatorProjection } from "cesium"
 import { useEffect, useRef } from "react"
-import { CoordinatesDisplay } from "./widgets"
+import { CoordinatesDisplay, BaseLayerSwitcher } from "./widgets"
 import { useCesium } from "@/context/Cesium";
 
 const View: React.FC = () => {
@@ -19,8 +19,8 @@ const View: React.FC = () => {
                         url: "https://tile.openstreetmap.org/"
                     })),
                     mapProjection: new WebMercatorProjection(),
-                    timeline: false,
-                    animation: false,
+                    timeline: true,
+                    animation: true,
                     fullscreenButton: false,
                     geocoder: false,
                     homeButton: false,
@@ -68,6 +68,7 @@ const View: React.FC = () => {
             {viewerRef.current && (
                 <>
                     <CoordinatesDisplay />
+                    <BaseLayerSwitcher />
                 </>
             )}
         </div>
