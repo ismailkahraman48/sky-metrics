@@ -3,12 +3,16 @@ import { useEffect, useRef } from "react"
 import { CoordinatesDisplay, BaseLayerSwitcher } from "./widgets"
 import { useCesium } from "@/context/Cesium";
 
+
 const View: React.FC = () => {
     const cesiumContainerRef = useRef<HTMLDivElement>(null)
     const viewerRef = useRef<Viewer | null>(null)
     const { setViewer } = useCesium();
 
+
+
     useEffect(() => {
+
         if (cesiumContainerRef.current && !viewerRef.current) {
             try {
                 const cesiumView = new Viewer(cesiumContainerRef.current, {
